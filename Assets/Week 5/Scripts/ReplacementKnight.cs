@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ReplacementKnight : MonoBehaviour
 {
     Vector2 destination;
@@ -41,8 +42,7 @@ public class ReplacementKnight : MonoBehaviour
     private void Update()
     {
         if (isDead) return;
-
-        if (Input.GetMouseButtonDown(0) && !clickingOnSelf)
+        if (Input.GetMouseButtonDown(0) && !clickingOnSelf && !EventSystem.current.IsPointerOverGameObject())
         {
             destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
